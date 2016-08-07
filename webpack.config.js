@@ -3,13 +3,15 @@
 module.exports = {
 	entry: './index.js',
 	output: {
-		filename: 'bundle.js'
+		filename: 'dist/bundle.js'
 	},
 	watch: true,
 	module: {
 		loaders: [
 			{
-				loader: 'babel-loader'
+				test: /\.js$/,
+				exclude: /(node_modules)/,
+				loader: 'babel?presets[]=es2015'
 			}
 		]
 	}
